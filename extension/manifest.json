@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Immich → darktable",
+  "version": "1.0.0",
+  "description": "Open the selected Immich photos in darktable on this machine.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoflClCsD6MINfu6EJQHIfnIZMqKkYQiX2izpURyXxuMpEA5j3Ia4wGV9ICV7xSQiYZE8HLjkgN9pnvbB+WUnXtip+I/gVHQBoTTjq4K8x4+SSLrcBFtJn9Q6+53xEv1hauKA6kUFTWolNyvSTwHgdhFj4S2GnFlLl60UYJv95g8CiF1H6YRTz0zlMJPo0tGHuKLvHIvc5WYi9uzCEMNgZy232dJ7XAOi46/X3H5xESpByngnld3WTbAlXLQ022s4kV6flG22fdypCh1Y5GFmLo8gWvHQs3cuyr6USpk2Kop2DmzT+0jh4F0FP7tEvupycmyGXB8sn7okNY4teo96DQIDAQAB",
+  "permissions": ["nativeMessaging", "storage", "cookies", "scripting"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Open selection in darktable" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "commands": {
+    "open-in-darktable": {
+      "suggested_key": { "default": "Alt+Shift+D" },
+      "description": "Open the selected Immich photos in darktable"
+    }
+  },
+  "icons": { "128": "icon128.png", "48": "icon48.png", "16": "icon16.png" }
+}

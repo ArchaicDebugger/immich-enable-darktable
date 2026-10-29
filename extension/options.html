@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Immich → darktable settings</title>
+    <style>
+      body { font: 14px system-ui, sans-serif; max-width: 680px; margin: 32px auto; padding: 0 16px; color: #111827; }
+      h1 { font-size: 20px; }
+      label { display: block; margin: 18px 0 4px; font-weight: 600; }
+      input[type='text'], input[type='password'], textarea { width: 100%; box-sizing: border-box; padding: 8px; font: 13px ui-monospace, monospace; }
+      textarea { height: 90px; }
+      .hint { color: #6b7280; font-size: 12px; margin-top: 4px; }
+      button { margin-top: 22px; padding: 8px 18px; font: inherit; cursor: pointer; }
+      #status { margin-left: 12px; }
+      .err { color: #b91c1c; }
+      code { background: #f3f4f6; padding: 1px 4px; border-radius: 3px; }
+    </style>
+  </head>
+  <body>
+    <h1>Immich → darktable</h1>
+
+    <label for="immichUrl">Immich URL</label>
+    <input type="text" id="immichUrl" placeholder="https://photos.example.com" />
+    <div class="hint">The extension only runs on this origin. You'll be asked to grant access to it.</div>
+
+    <label for="apiKey">API key (optional)</label>
+    <input type="password" id="apiKey" />
+    <div class="hint">Leave empty to use your logged-in browser session. Needs the <code>asset.read</code> and <code>asset.download</code> permissions.</div>
+
+    <label for="downloadDir">Download folder</label>
+    <input type="text" id="downloadDir" />
+    <div class="hint">Originals are saved here and reused next time, so darktable edits (XMP sidecars) are kept.</div>
+
+    <label for="pathMappings">Path mappings (optional)</label>
+    <textarea id="pathMappings" placeholder="/usr/src/app/upload => /srv/immich/upload&#10;/mnt/photos => /home/me/photos"></textarea>
+    <div class="hint">One per line: <code>Immich server path =&gt; local path</code>. If an asset's original exists locally after mapping, darktable opens that file directly instead of downloading a copy.</div>
+
+    <label for="darktableCommand">darktable command</label>
+    <input type="text" id="darktableCommand" />
+    <div class="hint"><code>auto</code> uses <code>darktable</code> on PATH, or the Flatpak <code>org.darktable.Darktable</code>.</div>
+
+    <label><input type="checkbox" id="insecureTls" /> Accept self-signed TLS certificates</label>
+
+    <button id="save">Save</button><span id="status"></span>
+
+    <script src="options.js"></script>
+  </body>
+</html>
