@@ -1,6 +1,6 @@
 # Immich → darktable
 
-A Chrome/Brave extension that adds an **Open in darktable** button to Immich. Select one or more photos (or open one in the viewer), click the button, and darktable opens them on this machine.
+A VERY VERY VIBECODED Chrome/Brave extension that adds an **Open in darktable** button to Immich. Select one or more photos (or open one in the viewer), click the button, and darktable opens them on this machine.
 
 ## How it works
 
